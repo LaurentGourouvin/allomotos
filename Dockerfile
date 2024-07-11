@@ -7,6 +7,9 @@ WORKDIR /app
 # Copier le package.json et le package-lock.json
 COPY package*.json ./
 
+# Install apt
+RUN npm install -g @nestjs/cli
+
 # Installer les dépendances
 RUN npm install
 
