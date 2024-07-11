@@ -56,6 +56,7 @@ fi
 # Vérification de l'appartenance à groupe Docker et ajout si nécessaire
 if groups $USER | grep -q docker; then
     echo "Votre utilisateur ($USER) appartient déjà au groupe Docker."
+    make docker-build
 else
     echo "Ajout de votre utilisateur ($USER) au groupe Docker..."
 
