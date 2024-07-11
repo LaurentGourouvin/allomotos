@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install apt
-RUN npm install -g @nestjs/cli
+RUN npm install -g @nestjs/cli@10.1.8
 
 # Installer les dépendances
 RUN npm install
