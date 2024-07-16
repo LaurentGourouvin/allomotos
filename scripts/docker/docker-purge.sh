@@ -5,6 +5,7 @@ sudo docker rm mysql_motos_db
 
 echo "Suppression des différents volumes..."
 sudo docker volume rm moto_data_persist_db
+sudo docker volume rm moto-backend_mysqldata
 
 echo "Redémarrage de docker..."
 sudo systemctl restart docker
