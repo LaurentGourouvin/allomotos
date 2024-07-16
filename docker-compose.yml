@@ -9,7 +9,8 @@ services:
     ports:
       - "3200:3000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - DATABASE_HOST=db
       - DATABASE_PORT=3306
@@ -29,6 +30,11 @@ services:
       MYSQL_DATABASE: motos
     volumes:
       - mysqldata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 20s
+      retries: 5
 
   adminer:
     image: adminer:4.8.1-standalone
