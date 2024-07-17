@@ -9,6 +9,7 @@ COPY package*.json ./
 
 # Install apt
 RUN npm install -g @nestjs/cli@10.1.8
+RUN npm install -g ts-node
 
 # Installer les dépendances
 RUN npm install
