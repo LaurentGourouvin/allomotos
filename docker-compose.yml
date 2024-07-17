@@ -19,6 +19,7 @@ services:
       - DATABASE_NAME=motos
     volumes:
       - .:/app
+      - /app/node_modules
 
   db:
     image: mysql:9.0.0
