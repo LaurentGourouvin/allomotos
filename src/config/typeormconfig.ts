@@ -2,9 +2,14 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'mysql',
-  database: 'db',
-  entities: ['dist/**/*.entity.js'],
-  migrations: ['dist/src/migrations/*.js'],
+  host: 'localhost',
+  port: 3307,
+  username: 'root',
+  password: 'root',
+  database: 'motos',
+  synchronize: false,
+  entities: ['dist/domain/entities/*.js'],
+  migrations: ['dist/migrations/*.js'],
 };
-const dataSource = new DataSource(dataSourceOptions);
-export default dataSource;
+const typeormconfig = new DataSource(dataSourceOptions);
+export default typeormconfig;
