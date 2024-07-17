@@ -1,4 +1,5 @@
 import { ConfigService } from '@nestjs/config';
+import { join } from 'path';
 
 export const configProviders = [
   {
@@ -13,6 +14,8 @@ export const configProviders = [
         password: configService.get<string>('DATABASE_PASSWORD'),
         database: configService.get<string>('DATABASE_NAME'),
         entities: ['dist/domain/entities/*.js'],
+        migrations: ['dist/migrations/*.js'],
+        // migrations: [join(__dirname, '../../migrations/**/*{.ts,.js}')],
         synchronize: false,
       };
     },
