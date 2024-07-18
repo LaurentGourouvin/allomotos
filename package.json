@@ -21,7 +21,8 @@
     "typeorm": "npm run build && npx typeorm -d dist/config/typeormconfig.js",
     "migration:generate": "docker exec -it motos_api npm run typeorm -- migration:generate",
     "migration:run": "docker exec -it motos_api npm run typeorm -- migration:run",
-    "migration:revert": "docker exec -it motos_api npm run typeorm -- migration:revert"
+    "migration:revert": "docker exec -it motos_api npm run typeorm -- migration:revert",
+    "changelog:generate": "git cliff -o CHANGELOG.md"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
